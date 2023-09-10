@@ -48,7 +48,7 @@ function EventWrapper() {
      * @return {*} 
      */
     this.getMethods = function (fnInstance, method = true) {
-        let m = {};
+        let m = !!method ? {} : [];
         // Get the keys of all instances
         for (const k in fnInstance) {
             // check if the type is of a function
@@ -58,7 +58,7 @@ function EventWrapper() {
                 if (!!method) {
                     m[fnInstance[k].name] = fnInstance[k];
                 } else {
-                    m[fnInstance[k].name] = fnInstance[k].name;
+                    m.push(fnInstance[k].name);
                 }
             }
         }
