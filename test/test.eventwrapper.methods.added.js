@@ -2,12 +2,12 @@ const { expect } = require('chai');
 const sinon = require('sinon');
 const EventEmitter = require('events');
 
-const MyFunctionWithEvents = require("../src/index");
+const EventWrapper = require("../src/index");
 
-describe('MyFunctionWithEvents', () => {
+describe('Manipulating object functions using wrapper function', () => {
     describe('wrapper', () => {
         it('should wrap methods with event emitters - 1', () => {
-            const myInstance = new MyFunctionWithEvents();
+            const myInstance = new EventWrapper();
 
             // Create a mock object with two methods
             const objToWrap = {
@@ -41,7 +41,7 @@ describe('MyFunctionWithEvents', () => {
         });
 
         it('should wrap methods with event emitters - 2', () => {
-            const myInstance = new MyFunctionWithEvents();
+            const myInstance = new EventWrapper();
 
             // Create a mock object with two methods
             const objToWrap = {
@@ -75,7 +75,7 @@ describe('MyFunctionWithEvents', () => {
         });
 
         it('should throw an error for a non-object argument', () => {
-            const myInstance = new MyFunctionWithEvents();
+            const myInstance = new EventWrapper();
 
             // Attempt to wrap a non-object argument
             const nonObjectArg = 'not_an_object';
