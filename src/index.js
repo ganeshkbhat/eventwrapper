@@ -65,6 +65,15 @@ function EventWrapper() {
         return m;
     }
 
+    /**
+     * wrapMethods
+     * 
+     * @param {boolean} [method=true]
+     * @return {*} 
+     */
+    this.wrapMethods = function () {
+
+    }.bind(this);
 }
 
 module.exports = EventWrapper;
