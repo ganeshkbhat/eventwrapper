@@ -2,7 +2,7 @@ const { expect } = require('chai');
 const sinon = require('sinon');
 const EventEmitter = require('events');
 
-const MyFunctionWithEvents = require("../src/index");
+const EventWrapper = require("../src/index");
 
 describe('Manipulating functions using wrapMethods function by extending classes', () => {
     describe('instance', () => {
