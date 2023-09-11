@@ -29,24 +29,25 @@ myInstance.events.on('methodCompleted', (methodName, result) => {
 myInstance.method1(2, 3); 
 ```
 
-
 USAGE:
 
 ##### .wrapMethods
+
+The .wrapMethods function is being used to wrap all methods within the function with events manually
 
 ```
 const EventWrapper = require("eventwrapper");
 
 function MyWrapper() {
-    EventWrapper.call(this, ...arguments);
-
+    // EventWrapper.call(this, ...arguments);
     this.method1 = () => console.log("Test 1");
-
-    EventWrapper.wrap();
 }
 
-let myInstance = new MyWrapper();
-myInstance.wrapMethods();
+let myInstance = new EventWrapper();
+myInstance.wrapMethods(MyWrapper);
+
+// let myInstance = new MyWrapper();
+// myInstance.wrapMethods();
 
 myInstance.events.on('methodCalled', (methodName, args) => {
     console.log(`Method ${methodName} called with arguments: ${args}`);
@@ -59,10 +60,11 @@ myInstance.events.on('methodCompleted', (methodName, result) => {
 myInstance.method1(2, 3); 
 ```
 
-
 USAGE:
 
 ##### .wrap
+
+The .wrap function is being used to extend a function or class with life cycle events using the EventWrapper function
 
 ```
 const EventWrapper = require("eventwrapper");
