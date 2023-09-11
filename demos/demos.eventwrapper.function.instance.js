@@ -18,12 +18,22 @@
 
 const EventWrapper = require("../src/index");
 
+function MyWrapper() {
+    this.method1 = () => console.log("Test 1");
+}
+
 const myInstance = new EventWrapper();
-myInstance.wrapper({
-    method1: function (a, b) {
-        return a + b;
-    }
-});
+myInstance.wrapMethods(MyWrapper);
+
+//
+// function MyWrapper() {
+//     EventWrapper.call(this, ...arguments);
+//     this.method1 = () => console.log("Test 1");
+// }
+// 
+// const myInstance = new MyWrapper();
+// myInstance.wrapMethods();
+//
 
 console.log(myInstance);
 

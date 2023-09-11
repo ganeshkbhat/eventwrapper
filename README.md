@@ -39,15 +39,22 @@ The .wrapMethods function is being used to wrap all methods within the function 
 const EventWrapper = require("eventwrapper");
 
 function MyWrapper() {
-    // EventWrapper.call(this, ...arguments);
     this.method1 = () => console.log("Test 1");
 }
 
-let myInstance = new EventWrapper();
+const myInstance = new EventWrapper();
 myInstance.wrapMethods(MyWrapper);
 
-// let myInstance = new MyWrapper();
+//
+// function MyWrapper() {
+//     EventWrapper.call(this, ...arguments);
+//     this.method1 = () => console.log("Test 1");
+// }
+// 
+// const myInstance = new MyWrapper();
 // myInstance.wrapMethods();
+//
+
 
 myInstance.events.on('methodCalled', (methodName, args) => {
     console.log(`Method ${methodName} called with arguments: ${args}`);
