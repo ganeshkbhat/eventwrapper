@@ -1,0 +1,9 @@
+[TODOS]
+
+- [] Function extension using call method for internally defined functions/ methods for the function/ class
+- [] Function wrapper for externally defined functions/ methods for the function/ class
+- [] Internally defined functions
+- [] Closure functions based extensions for functions
+- [] Closure functions based extensions for class
+- [] Adding test files
+- [] Adding demos for all modes of usage above
