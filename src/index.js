@@ -22,11 +22,11 @@ const EventEmitter = require('events');
  * EventWrapper
  *
  */
-function EventWrapper(initCallback) {
+function EventWrapper(initEventCallback) {
     // EventEmitter.call(this, arguments);
     this.events = new EventEmitter();
-    
-    this.events.on('init', initCallback || function (methodName, args) {
+
+    this.events.on('init', initEventCallback || function (methodName, args) {
         console.log(`Method ${methodName} called with arguments: ${args}`);
     });
     this.events.emit('init', "constructor", arguments);
