@@ -39,8 +39,10 @@ const EventWrapper = require("eventwrapper");
 
 function MyWrapper() {
     EventWrapper.call(this, ...arguments);
+
     this.method1 = () => console.log("Test 1");
-    EventWrapper.wrap()
+
+    EventWrapper.wrap();
 }
 
 let myInstance = new MyWrapper();
@@ -70,7 +72,7 @@ function MyWrapper() {
     
     this.method1 = () => console.log("Test 1");
 
-    EventWrapper.wrap()
+    EventWrapper.wrap();
 }
 
 let myInstance = new MyWrapper();
