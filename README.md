@@ -109,12 +109,12 @@ const EventWrapper = require("eventwrapper");
 class MyWrapper extends EventWrapper {
 
     constructor() {
-        super()
+        super();
+        this.wrap();
     }
 
     this.method1 = () => console.log("Test 1");
 
-    this.wrap();
 }
 
 let myInstance = new MyWrapper();
