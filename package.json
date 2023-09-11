@@ -1,7 +1,7 @@
 {
   "name": "eventwrapper",
   "version": "0.0.1",
-  "description": "event wrapper function module to wrap all methods of a function with events",
+  "description": "event wrapper function module to wrap all methods of a function with events or eventify lifecyle events for the function or class",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -13,11 +13,18 @@
   "scripts": {
     "test": "mocha --reporter spec --recursive"
   },
+  "homepage": "https://github.com/ganeshkbhat/eventwrapper#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ganeshkbhat/eventwrapper.git"
   },
-  "keywords": [],
+  "keywords": [
+    "wrap events",
+    "eventify function methods",
+    "eventify class methods",
+    "eventify function or class lifecyle",
+    "lifecycle events for function or class"
+  ],
   "author": "Ganesh B <ganeshsurfs@gmail.com>",
   "license": "MIT",
   "devDependencies": {
