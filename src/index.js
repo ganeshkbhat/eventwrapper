@@ -86,10 +86,18 @@ function EventWrapper(initEventCallback) {
     /**
      * wrapMethods
      * 
-     * @param {boolean} [method=true]
      * @return {*} 
      */
     this.wrapMethods = function () {
+
+    }.bind(this);
+
+    /**
+     * wrap
+     * 
+     * @return {*} 
+     */
+    this.wrap = function () {
 
     }.bind(this);
 }
