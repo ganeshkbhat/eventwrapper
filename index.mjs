@@ -7,7 +7,7 @@
  * Install: 
  * Github: https://github.com/ganeshkbhat/eventwrapper
  * npmjs Link: 
- * File: .js
+ * File: .mjs
  * File Description: 
  * 
 */
@@ -16,14 +16,7 @@
 
 'use strict';
 
+import { EventWrapper } from "./index.js";
 
-function DemoFunction() {
-    let dc = 10;
-    this.tester = 20;
-    this.method1 = function() {
-        console.log("tester1: ", this.tester);
-    }
-    this.method2 = function() {
-        console.log("tester2: ", dc);
-    }
-}
+export default EventWrapper;
+export { EventWrapper };
