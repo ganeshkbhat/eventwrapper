@@ -23,13 +23,15 @@ const EventEmitter = require('events');
  *
  */
 function EventWrapper(initEventCallback) {
-    // EventEmitter.call(this, arguments);
     this.events = new EventEmitter();
-
     this.events.on('init', initEventCallback || function (methodName, args) {
         console.log(`Method ${methodName} called with arguments: ${args}`);
     });
-    this.events.emit('init', "constructor", arguments);
+
+    this.init = () => { this.events.emit('init', "constructor", arguments) };
+    this.init();
+
+    this.destroy = () => { this.events.emit('destroy', "destroy", null) };
 
     /**
      * wrapper
