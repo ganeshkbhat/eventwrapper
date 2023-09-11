@@ -1,5 +1,5 @@
 {
-  "name": "eventwrapper",
+  "name": "eventise",
   "version": "0.0.1",
   "description": "event wrapper function module to wrap all methods of a function with events or eventify lifecyle events for the function or class",
   "main": "index.js",
