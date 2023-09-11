@@ -7,7 +7,7 @@
  * Install: 
  * Github: https://github.com/ganeshkbhat/eventwrapper
  * npmjs Link: 
- * File: demos/demos.eventwrapper.function.instance.js
+ * File: index.mjs
  * File Description: 
  * 
 */
@@ -16,26 +16,19 @@
 
 'use strict';
 
-const EventWrapper = require("../src/index");
+const EventWrapper = require("eventwrapper");
 
-function MyWrapper() {
-    this.method1 = () => console.log("Test 1");
+class MyWrapper extends EventWrapper {
+
+    constructor() {
+        super()
+        this.wrap();
+    }
+
+    method1 = () => console.log("Test 1");
 }
 
-const myInstance = new EventWrapper();
-myInstance.wrapMethods(MyWrapper);
-
-// 
-// function MyWrapper() {
-//     EventWrapper.call(this, ...arguments);
-//     this.method1 = () => console.log("Test 1");
-// }
-// 
-// const myInstance = new MyWrapper();
-// myInstance.wrapMethods();
-// 
-
-console.log(myInstance);
+let myInstance = new MyWrapper();
 
 myInstance.events.on('methodCalled', (methodName, args) => {
     console.log(`Method ${methodName} called with arguments: ${args}`);
@@ -45,5 +38,4 @@ myInstance.events.on('methodCompleted', (methodName, result) => {
     console.log(`Method ${methodName} completed with result: ${result}`);
 });
 
-// Now, when you call the wrapped methods, they will emit events before and after execution
-myInstance.method1(2, 3); // Example output for method1
+myInstance.method1(2, 3); 

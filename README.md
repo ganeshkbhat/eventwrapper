@@ -96,3 +96,36 @@ myInstance.events.on('methodCompleted', (methodName, result) => {
 
 myInstance.method1(2, 3); 
 ```
+
+USAGE:
+
+##### .wrap
+
+The .wrap function is being used to extend a function or class with life cycle events using the EventWrapper function
+
+```
+const EventWrapper = require("eventwrapper");
+
+class MyWrapper extends EventWrapper {
+
+    constructor() {
+        super()
+    }
+
+    this.method1 = () => console.log("Test 1");
+
+    this.wrap();
+}
+
+let myInstance = new MyWrapper();
+
+myInstance.events.on('methodCalled', (methodName, args) => {
+    console.log(`Method ${methodName} called with arguments: ${args}`);
+});
+
+myInstance.events.on('methodCompleted', (methodName, result) => {
+    console.log(`Method ${methodName} completed with result: ${result}`);
+});
+
+myInstance.method1(2, 3); 
+```

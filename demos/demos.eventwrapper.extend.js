@@ -16,8 +16,7 @@
 
 'use strict';
 
-
-function DemoFunction() {
+function WrapEvents() {
     let dc = 10;
     this.tester = 20;
     this.method1 = function() {
@@ -28,12 +27,6 @@ function DemoFunction() {
     }
 }
 
-const myInstance = new WrapEvents();
-myInstance.wrapper({
-    method1: function (a, b) {
-        return a + b;
-    }
-});
 
 
 console.log(myInstance);
