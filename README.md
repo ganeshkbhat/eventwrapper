@@ -1,6 +1,6 @@
 # eventwrapper
 
-event wrapper function module to wrap all methods of a function with events
+event wrapper function module to wrap all methods of a function with events or eventify lifecyle events for the function or class
 
 Please find the demos in the folder [demos](./demos)
 
