@@ -7,7 +7,7 @@
  * Install: 
  * Github: https://github.com/ganeshkbhat/eventwrapper
  * npmjs Link: 
- * File: .js
+ * File: src/index.js
  * File Description: 
  * 
 */

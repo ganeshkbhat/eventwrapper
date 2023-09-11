@@ -7,7 +7,7 @@
  * Install: 
  * Github: https://github.com/ganeshkbhat/eventwrapper
  * npmjs Link: 
- * File: index.js
+ * File: test/test.eventwrapper.function.extend.js
  * File Description: 
  * 
 */
