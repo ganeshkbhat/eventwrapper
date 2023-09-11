@@ -31,7 +31,10 @@ function EventWrapper(initEventCallback) {
     this.init = () => { this.events.emit('init', "constructor", arguments) };
     this.init();
 
-    this.destroy = () => { this.events.emit('destroy', "destroy", null) };
+    this.destroy = () => { 
+        this.events.emit('destroy', "destroy", null);
+        delete this;
+    };
 
     /**
      * wrapper

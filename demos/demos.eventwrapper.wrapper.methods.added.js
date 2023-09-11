@@ -14,7 +14,7 @@
 
 /* eslint no-console: 0 */
 
-'use strict';
+// 'use strict';
 
 const EventWrapper = require("../src/index");
 
@@ -35,6 +35,13 @@ myInstance.events.on('methodCompleted', (methodName, result) => {
     console.log(`Method ${methodName} completed with result: ${result}`);
 });
 
+myInstance.events.on('destroy', (methodName, result) => {
+    console.log(`Method ${methodName} completed with result: ${result}`);
+});
+
 // Now, when you call the wrapped methods, they will emit events before and after execution
 myInstance.method1(2, 3); // Example output for method1
 
+myInstance.destroy();
+delete myInstance;
+console.log(myInstance);
