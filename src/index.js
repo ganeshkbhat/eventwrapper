@@ -25,6 +25,7 @@ const EventEmitter = require('events');
 function EventWrapper() {
     // EventEmitter.call(this, arguments);
     this.events = new EventEmitter();
+    this.events.emit('init', "constructor", arguments);
 
     /**
      * wrapper
